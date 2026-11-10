@@ -2,7 +2,7 @@
 
 Ning 的個人作品集網站：兩個實際在用的工具，以及一套和 AI 協作的工作方法。
 
-- 網址：https://ning-forex.github.io/ning-portfolio/
+- 網址：https://ningchou.github.io/
 - 內容：AI 新聞收件匣、臨床資料工具、流程與驗收 Skill。
 
 ## 結構
