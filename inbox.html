@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Ning 的作品：AI 新聞收件匣，從 LINE 收藏到每日短評與對話裁決。">
+<title>AI 新聞收件匣｜Ning</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website"><meta property="og:title" content="AI 新聞收件匣｜Ning"><meta property="og:description" content="Ning 的作品：AI 新聞收件匣，從 LINE 收藏到每日短評與對話裁決。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="case-page">
+<a class="skip" href="#main">跳到主要內容</a>
+<header class="top"><nav class="nav wrap" aria-label="主要導覽"><a href="index.html" class="brand">Ning <span>AI 協作作品集</span></a><div class="links"><a href="index.html#works">作品</a><a href="index.html#method">工作方法</a><a href="index.html#approach" class="about-link">我的分工</a><button class="theme" type="button" aria-label="切換深淺色模式" aria-pressed="false" hidden><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.5 13A8.6 8.6 0 0 1 11 3.5 8.6 8.6 0 1 0 20.5 13Z"/></svg></button></div></nav></header>
+<main id="main" class="wrap">
+<a class="back" href="index.html#works">← 回到作品集</a>
+<article id="inbox" class="case" aria-labelledby="inbox-title"><div class="case-title"><div class="case-no" aria-hidden="true">01</div><div><p class="eyebrow">AI 新聞收件匣 ／ 從收藏到決定</p><h2 id="inbox-title">文章收進來之後，我得知道哪幾篇值得試。</h2><p>手機看到的文章丟進 LINE 就存好；每天早上系統先讀原文、對照我手上的專案寫短評，我在對話裡逐篇決定。</p></div></div><div class="case-grid"><div class="prose"><div class="story-block"><div class="body-label">我想解決的問題</div><p>收藏很快，但收進來的文章越積越多。我需要知道哪幾篇跟手上的工作有關、值得花時間試，其他的可以安心略過。</p></div><div class="story-block"><div class="body-label">現在的流程</div><ol class="flow"><li><span class="dot">1</span><div><strong>LINE：先把連結留下來</strong><p>手機分享文章，不必當下分類。</p></div></li><li><span class="dot">2</span><div><strong>系統辨識，存進 Notion</strong><p>Cloudflare Worker 擷取內容、去重；可擷取時附 AI 短辨識。</p></div></li><li><span class="dot">3</span><div><strong>每天早上寫短評</strong><p>本機排程讀原文，對照我的專案與待辦，寫下重點、可以用在哪，以及結論：值得試、參考就好或無關。讀不到原文就標「需要救援」。</p></div></li><li><span class="dot">4</span><div><strong>LINE 收到每日摘要</strong><p>只通知，不在 LINE 裡做決定。</p></div></li><li><span class="dot">5</span><div><strong>在對話裡決定</strong><p>我跟 AI 說「看 AI News」，逐篇回覆；決定要試的，才做深入研究。</p></div></li></ol></div><div class="story-block"><div class="body-label">為什麼停用工作台</div><p>我原本做了一個網頁工作台，用來檢視和決定文章。做好、也上線了，但實際用下來我不會打開它：登入會過期，每篇還要先跑完整研究、等我批准，結果有 9 篇候選積壓未處理。所以我把它停掉，改成每天先寫短評，我在對話裡直接決定。</p></div><div class="story-block"><div class="body-label">一個實際例子：這個作品集</div><p>這個作品集的版面細節，就是從收件匣裡的兩篇設計規則文章試出來的。</p><ol class="flow-steps"><li>兩篇原本讀不到原文，補讀後確認內容可用。</li><li>決定試用，只取適合中文作品集的規則：字級與間距的固定刻度、首屏換行；不安裝工具。</li><li>在這個作品集上修改，做改前改後對照：使用中的字級從 14 種收斂到 8 種，也順便抓到一個關閉 JavaScript 時按鈕仍顯示的錯誤。</li><li>我看過對照後決定採用，寫進自己的 UI 規則手冊。</li></ol></div><div class="story-block"><div class="body-label">卡關後留下的規則</div><p>文章不一定抓得到，AI 辨識也可能失敗。因此，流程不能把「有完整摘要」當作保存的前提：抓取或辨識失敗仍保留網址；資料庫故障時，也不能假裝收藏成功。</p></div></div>
+<div><div class="sample"><div class="sample-bar"><strong>一則實際短評（節錄）</strong><span class="demo-tag">實際內容</span></div><div class="raw"><pre class="wrap">結論：值得試
+重點：貼文介紹開源 elayadesign/ai-design-skills 的 landing-page-design 規則（MIT）：先定目標、對象與主要行動，再套固定字級、間距、圓角、動效；附交付檢查清單。
+…
+怎麼用：只讀 GitHub 上的 SKILL.md 當審查清單，不安裝。可借：首屏標題／副標最寬 680px 並在語意處換行、間距與字級改用固定刻度、交付前檢查清單。
+試用成本：免費 是｜Windows 是｜需安裝 否</pre></div><div class="sample-note">「…」省略的是對應到我內部專案的一行。這篇就是「一個實際例子」用到的文章。</div></div>
+<div class="sample"><div class="sample-bar"><strong>LINE 每日摘要</strong><span class="demo-tag">格式示意</span></div><div class="raw"><pre class="wrap">AI News｜11/07 新短評 5 篇
+值得試 1、參考 3、無關 0、需要救援 1
+・〈標題〉→ 可以用在哪一項工作
+未裁決共 12 篇，在 OMP 說「看 AI News」</pre></div><div class="sample-note">依規格的格式示意，數字為範例，不是實際某天的摘要。</div></div>
+<div class="sample"><div class="sample-bar"><strong>對話裡的決定（實際節錄）</strong><span class="demo-tag">實際內容</span></div><div class="chat"><p><b>AI</b>兩篇救援文章已補上短評，建議都設為保留；要不要用作品集開一輪試用？其他待救援的文章要不要一起處理？</p><p class="me"><b>我</b>1 照建議　2 同意　3 先不用</p><p><b>AI</b>兩篇已改為保留，補上深入研究，開始在作品集上試用。</p></div><div class="sample-note">對話文字經過精簡，原意不變。</div></div></div></div>
+<div class="split-note"><div><strong>我負責</strong>使用情境、流程規則、功能取捨，以及每篇文章的最後決定。</div><div><strong>AI Agent 協助</strong>程式實作與串接、每日短評撰寫、補讀原文與深入研究。</div></div><p class="limit">目前界線：每日短評從 2026-11-09 開始運作；讀不到原文的文章，目前要等瀏覽器連線修好或我手動貼原文才能補救。舊工作台停用，程式保留未刪。</p></article>
+<nav class="case-nav" aria-label="作品切換"><a class="next" href="clinical.html"><small>下一個 →</small>臨床資料工具</a></nav>
+<footer><div>Ning · AI 協作作品集</div><div class="footer-right">最後更新：2026-11-10</div></footer>
+</main>
+<script src="theme.js"></script>
+</body></html>

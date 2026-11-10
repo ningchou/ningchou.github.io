@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Ning 的工作方法：把參數篩選與策略翻譯整理成可驗收的 Skill。">
+<title>流程與驗收 Skill｜Ning</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website"><meta property="og:title" content="流程與驗收 Skill｜Ning"><meta property="og:description" content="Ning 的工作方法：把參數篩選與策略翻譯整理成可驗收的 Skill。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="case-page">
+<a class="skip" href="#main">跳到主要內容</a>
+<header class="top"><nav class="nav wrap" aria-label="主要導覽"><a href="index.html" class="brand">Ning <span>AI 協作作品集</span></a><div class="links"><a href="index.html#works">作品</a><a href="index.html#method">工作方法</a><a href="index.html#approach" class="about-link">我的分工</a><button class="theme" type="button" aria-label="切換深淺色模式" aria-pressed="false" hidden><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.5 13A8.6 8.6 0 0 1 11 3.5 8.6 8.6 0 1 0 20.5 13Z"/></svg></button></div></nav></header>
+<main id="main" class="wrap">
+<a class="back" href="index.html#method">← 回到作品集</a>
+<article id="skills" class="case" aria-labelledby="skills-title"><div class="case-title"><div class="case-no" aria-hidden="true">01</div><div><p class="eyebrow">流程與驗收 Skill ／ 規則不只放在對話裡</p><h2 id="skills-title">AI 說做完了，下一步是核對。</h2><p>把反覆使用的步驟、踩過的坑與驗收方法留下來，讓下一次執行有依據，而不是每次重新猜一次。</p></div></div><div class="case-grid"><div class="prose"><div class="body-label">兩個子案例</div><h3>從挑參數，到翻譯策略</h3><p>回測參數 SOP 定義資料稽核、篩選、候選與人工裁決；Pine → Python Skill 則要求翻譯後與原平台逐筆比對，原因未證實的差異不能直接當作通過。</p><div class="evidence"><b>一個具體的修正</b>AI 曾把規劃的 18,000 組，寫成實際有效資料量；實際不重複組合是 17,997 組。我要求把規劃數、實際數、有效數與排除數分開，並把這次問題補進規則。</div><div class="story-block"><div class="body-label">Skill 裡寫好的停止條件</div><div class="rule-quote"><div class="raw-label">backtest-param-sop ／ SKILL.md（原文節錄）</div><pre>## 停止條件
+
+遇到下列任一情況，不得繼續產出候選或宣稱完成：
+
+- 回測時間、時區、固定參數或計價方式未確認。
+- 預期網格與實際鍵數不一致，且差異原因未能唯一說明。
+- `DUPLICATE_CONFLICT`、stale 警告或批次固定參數衝突未解決。
+- 缺少必要欄位、檔名參數無法唯一還原，或存在未處理的缺漏鍵。
+…
+- 使用者要求把樣本內排名直接當成 OOS 或實盤結論。</pre><p>AI 執行這個 Skill 時必須遵守這些規則；「…」表示省略的條目。</p></div></div><div class="story-block"><div class="body-label">稽核表是怎麼跑出來的</div><p>用兩份各 2,750 列的合成資料，交給既有的分析工具執行。它先核對資料是否完整、有無重複，再比較兩份結果。資料是刻意做成完整、不重複的，所以預期全部通過。</p></div><details><summary>看驗證的界線</summary><p>這次只證明工具能正確計數，並留下可核對的紀錄；沒有餵入有問題的資料，所以不證明它會攔下錯誤。分析工具本身只負責計數，上面的停止條件是 AI 執行 Skill 時的規則，不是這支工具內建的功能。這支工具只適用固定案例，不代表目前 SOP 的全部規則都已驗證。</p></details></div>
+<div><div class="sample"><div class="sample-bar"><strong>資料稽核：預期 vs 實際</strong><span class="demo-tag">合成資料・實際執行</span></div><div class="table-scroll"><table class="check-table"><thead><tr><th scope="col">檢查項目</th><th scope="col">預期</th><th scope="col">工具結果</th></tr></thead><tbody><tr><td>預計參數組合</td><td>2,750</td><td class="pass">2,750</td></tr><tr><td>不重複組合</td><td>2,750</td><td class="pass">2,750</td></tr><tr><td>重複組合</td><td>0</td><td class="pass">0</td></tr><tr><td>缺漏組合</td><td>0</td><td class="pass">0</td></tr><tr><td>無法解析的資料列</td><td>0</td><td class="pass">0</td></tr><tr><td>兩份資料的組合相同</td><td>相同</td><td class="pass">相同</td></tr></tbody></table></div><div class="raw"><div class="raw-label">工具輸出原文（local_audit.csv 節錄）</div><pre>planned_keys,2750
+input_rows,2750
+unique_keys,2750
+parse_error_count,0
+duplicate_count,0
+missing_keys,0</pre></div><div class="sample-note">兩份資料各跑一次，結果相同；以相同輸入重跑，28 個輸出檔逐位元一致。資料為人工合成，不是行情或回測績效。</div></div>
+<details class="history"><summary>另一個 Skill：策略翻譯驗證的歷史紀錄</summary><div class="table-scroll"><table><thead><tr><th scope="col">案例</th><th scope="col">檢查什麼</th><th scope="col">紀錄結果</th></tr></thead><tbody><tr><td>保留題</td><td>交易進出場時間</td><td>260 筆全同</td></tr><tr><td>新對話題</td><td>Skill 觸發與結果</td><td>384 列全同</td></tr><tr><td>未知差異</td><td>原因是否有證據</td><td>交人工裁決</td></tr></tbody></table></div><p>依 Skill 版本紀錄整理，非本輪重跑。時間相同不代表成交價與損益全同，也不是投資績效保證。</p></details></div></div><div class="split-note"><div><strong>我負責</strong>定規則、提供案例、決定門檻與人工裁決。</div><div><strong>AI Agent 協助</strong>計算與翻譯程式、執行比對、整理差異及證據。</div></div><p class="limit">目前界線：驗證有指定案例與適用條件，不宣稱所有策略均適用；這是流程驗證案例，不是 RAG 實作。</p></article>
+<nav class="case-nav" aria-label="作品切換"><a href="clinical.html"><small>← 上一個</small>臨床資料工具</a><a class="next" href="index.html"><small>回到首頁 →</small>看全部作品</a></nav>
+<footer><div>Ning · AI 協作作品集</div><div class="footer-right">最後更新：2026-11-10</div></footer>
+</main>
+<script src="theme.js"></script>
+</body></html>
