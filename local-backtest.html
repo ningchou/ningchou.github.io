@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Ning 的作品：Local-Backtest，在 Windows 本機跑交易策略參數網格，並逐筆核對與 TradingView 的差異（合成資料展示）。">
+<title>Local-Backtest｜Ning</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website"><meta property="og:title" content="Local-Backtest｜Ning"><meta property="og:description" content="Ning 的作品：Local-Backtest，在 Windows 本機跑交易策略參數網格，並逐筆核對與 TradingView 的差異（合成資料展示）。">
+<link rel="stylesheet" href="style.css">
+<style>.ba-table td:first-child{white-space:nowrap;color:var(--ink);font-weight:600}.ba-table td{color:var(--muted)}.case-grid>div{min-width:0}</style>
+</head>
+<body class="case-page">
+<a class="skip" href="#main">跳到主要內容</a>
+<header class="top"><nav class="nav wrap" aria-label="主要導覽"><a href="index.html" class="brand">Ning <span>AI 協作作品集</span></a><div class="links"><a href="index.html#works">作品</a><a href="index.html#method">工作方法</a><a href="index.html#approach" class="about-link">我的分工</a><button class="theme" type="button" aria-label="切換深淺色模式" aria-pressed="false" hidden><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.5 13A8.6 8.6 0 0 1 11 3.5 8.6 8.6 0 1 0 20.5 13Z"/></svg></button></div></nav></header>
+<main id="main" class="wrap">
+<a class="back" href="index.html#works">← 回到作品集</a>
+<article id="local-backtest" class="case" aria-labelledby="lb-title"><div class="case-title"><div class="case-no" aria-hidden="true">04</div><div><p class="eyebrow">Local-Backtest ／ 本機回測工作台</p><h2 id="lb-title">在自己的電腦跑參數網格，再逐筆核對結果。</h2><p>把交易策略搬到 Windows 本機回測，用介面排批次、背景執行，並和 TradingView 的交易清單逐筆比對，確認本機算出來的結果可以信任。</p></div></div><div class="case-grid"><div class="prose">
+<div class="story-block"><div class="body-label">我想解決的問題</div><p>我原本靠 TradingView 跑大量參數組合，但平台卡住或批次中斷時，整個篩選流程就停下來。我需要一個能在自己電腦上跑、而且能證明結果和 TradingView 一致的替代方案。</p></div>
+<div class="story-block"><div class="body-label">原本 vs 現在</div><div class="table-scroll"><table class="ba-table"><thead><tr><th scope="col">環節</th><th scope="col">原本</th><th scope="col">現在</th></tr></thead><tbody><tr><td>跑參數網格</td><td>只靠 TradingView 批次，卡住或中斷就停</td><td>在本機介面設定範圍、排進佇列，背景排程器依序執行</td></tr><tr><td>結果可不可信</td><td>只有 TradingView 的結果，沒有第二份可以對照</td><td>新策略要先和 TradingView 逐筆比對，通過才放進介面；介面和排程器分開，關掉介面回測仍會繼續</td></tr></tbody></table></div></div>
+<div class="story-block"><div class="body-label">決策與原因</div><p>策略不用自動轉換工具，而是照固定流程逐行翻譯，再拿 TradingView 匯出的 K 棒和交易清單驗證。比對不只看總損益，而是逐筆對進出場時間、方向和出場原因；原因沒查清楚的差異交給我判斷，不調參數湊數字。</p></div>
+<div class="story-block"><div class="body-label">成果</div><p>目前介面可選 5 支通過驗證的策略，支援單組回測、平行網格搜尋、中斷續跑、候選比較與逐筆比對。網格結果輸出成 CSV，直接接到我的參數篩選流程。</p></div>
+<div class="story-block"><div class="body-label">還沒解決的事</div><p>每月更新行情資料的流程還沒實測。另外，回測區間結束時如果還有未平倉的交易，部分統計會不正確；目前的做法是先確認期末沒有未平倉，工具本身沒有修正。</p></div>
+<div class="story-block"><div class="body-label">這次展示的選擇</div><p>右側是工具的實際畫面，但在隔離的副本裡執行：用固定亂數產生的合成 K 棒，搭配一支公開的雙均線示範策略，不是我的策略。畫面裡的數字只是示範，不是績效，也沒有和 TradingView 比對。</p></div>
+</div>
+<div><figure class="sample"><div class="sample-bar"><strong>新增批次</strong><span class="demo-tag">實際工具畫面・合成資料</span></div><a class="shot" href="assets/lb-add-batch.png" target="_blank" rel="noopener"><img src="assets/lb-add-batch.png" alt="Local-Backtest 新增批次頁：勾選兩個參數設定掃描範圍，右側選擇示範策略、期間與行程數，總組數 9；資料為合成" width="1600" height="1000" loading="lazy"></a><figcaption class="sample-note"><strong>設定範圍，交給背景執行</strong>：勾選要掃描的參數與範圍，工具算出總組數後加入佇列；離開介面，回測仍會繼續。</figcaption></figure><figure class="sample"><div class="sample-bar"><strong>候選比較</strong><span class="demo-tag">實際工具畫面・合成資料</span></div><a class="shot" href="assets/lb-candidate-compare.png" target="_blank" rel="noopener"><img src="assets/lb-candidate-compare.png" alt="Local-Backtest 候選比較頁：三組示範參數的累積損益疊圖與單筆損益柱，上方為總損益、最大回撤、勝率與獲利因子；資料為合成，非績效" width="1600" height="1000" loading="lazy"></a><figcaption class="sample-note"><strong>挑幾組放在一起看</strong>：從批次結果挑出候選，同一期間重跑，把累積損益疊在一起比較。圖中是示範策略在合成資料上的結果，不是績效。</figcaption></figure></div></div>
+<div class="split-note"><div><strong>我負責</strong>定義要解決的問題、驗收標準與比對規則，閱讀差異證據後做裁決。</div><div><strong>AI Agent 協助</strong>撰寫程式、依規則翻譯策略、整理比對證據。</div></div><p class="limit">目前界線：工具只在 Windows 本機執行，不在雲端回測，也不下單。公開展示不含真實行情、我的策略名稱、參數、績效或交易紀錄。</p></article>
+<nav class="case-nav" aria-label="作品切換"><a href="lotcompass.html"><small>← 上一個</small>LotCompass</a><a class="next" href="skills.html"><small>下一個 →</small>工作方法：流程與驗收 Skill</a></nav>
+<footer><div>Ning · AI 協作作品集</div><div class="footer-right">最後更新：2026-11-13</div></footer>
+</main>
+<script src="theme.js"></script>
+</body></html>

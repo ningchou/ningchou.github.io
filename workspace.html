@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Ning 的工作方法：用規則、Skill、糾正紀錄與工作日誌，讓多個 AI 工具照同一套規則做事。">
+<title>AI 協作工作區｜Ning</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website"><meta property="og:title" content="AI 協作工作區｜Ning"><meta property="og:description" content="Ning 的工作方法：用規則、Skill、糾正紀錄與工作日誌，讓多個 AI 工具照同一套規則做事。">
+<link rel="stylesheet" href="style.css">
+<style>.layer-table td:first-child{white-space:nowrap;color:var(--ink);font-weight:600}.layer-table td:nth-child(2){font-family:"Cascadia Mono",Consolas,monospace;font-size:12px;white-space:nowrap}.layer-table td{color:var(--muted)}.counts{display:flex;gap:24px;flex-wrap:wrap;padding:16px 24px;border-top:1px solid var(--line)}.counts div{min-width:96px}.counts b{display:block;font:600 28px/1.2 Georgia,"PMingLiU",serif;color:var(--accent)}.counts span{font-size:12px;color:var(--muted)}.ba-pair{padding:16px 24px;display:grid;gap:12px}.ba-pair div{font-size:13px;color:var(--muted)}.ba-pair b{display:block;font-size:12px;margin-bottom:4px;color:var(--ink)}.case-grid>div{min-width:0}</style>
+</head>
+<body class="case-page">
+<a class="skip" href="#main">跳到主要內容</a>
+<header class="top"><nav class="nav wrap" aria-label="主要導覽"><a href="index.html" class="brand">Ning <span>AI 協作作品集</span></a><div class="links"><a href="index.html#works">作品</a><a href="index.html#method">工作方法</a><a href="index.html#approach" class="about-link">我的分工</a><button class="theme" type="button" aria-label="切換深淺色模式" aria-pressed="false" hidden><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.5 13A8.6 8.6 0 0 1 11 3.5 8.6 8.6 0 1 0 20.5 13Z"/></svg></button></div></nav></header>
+<main id="main" class="wrap">
+<a class="back" href="index.html#method">← 回到作品集</a>
+<article id="workspace" class="case" aria-labelledby="workspace-title"><div class="case-title"><div class="case-no" aria-hidden="true">02</div><div><p class="eyebrow">AI 協作工作區 ／ 規則不只講一次</p><h2 id="workspace-title">一次糾正，變成下次照做的規則。</h2><p>我同時用好幾個 AI 工具做事。為了讓它們照同一套規則工作，我把共用規則、Skill、糾正紀錄和工作日誌，分層放在同一個工作區。</p></div></div><div class="case-grid"><div class="prose">
+<div class="story-block"><div class="body-label">我想解決的問題</div><p>只靠當下對話交代規則，AI 換一個工作階段就忘了；同樣的錯會再犯一次，我的糾正也只留在那段對話裡。工具一多，每個工具還各自記著不同的版本。</p></div>
+<div class="story-block"><div class="body-label">做法：把規則放對層</div><p>跨工具都要遵守的原則寫在一份共用規則；反覆執行的任務寫成 Skill；被我糾正的事，照「錯誤做法 → 正確做法 → 原因」寫成一份糾正紀錄；每天做了什麼、決定了什麼，記在工作日誌。長期偏好只有在我確認後才升級，單次提案或 AI 之間的討論結果不會自動變成規則。</p></div>
+<div class="story-block"><div class="body-label">一個實際例子：對外文案</div><ol class="flow"><li><span class="dot">1</span><div><strong>出錯</strong><p>整理這個作品集時，AI 為了讓句子「更具體」，把只有我自己用的工具寫成「已經有人在用」，也把一段積壓時間寫長了。</p></div></li><li><span class="dot">2</span><div><strong>我糾正，寫成紀錄</strong><p>當天記下錯在哪、正確做法和原因：使用者、人數、頻率、期間只寫查得到或我確認過的事實。</p></div></li><li><span class="dot">3</span><div><strong>之後照做</strong><p>改寫對外文案前，先逐項核對句中的人數、頻率和時間；對不上的不寫。這一頁和其他作品頁都照這條規則寫。</p></div></li></ol></div>
+<div class="story-block"><div class="body-label">還沒解決的事</div><p>有規則不代表每次都會套用對，結果仍然要核對。另外，同時開好幾個工作階段時，彼此不一定知道對方的最新進度；我現在靠工作日誌和待辦清單接續，但還不是每次都接得上。</p></div>
+</div>
+<div><figure class="sample"><div class="sample-bar"><strong>工作區怎麼分層</strong><span class="demo-tag">結構示意・非產品畫面</span></div><div class="table-scroll"><table class="layer-table"><thead><tr><th scope="col">層</th><th scope="col">放在哪</th><th scope="col">放什麼</th></tr></thead><tbody><tr><td>共用規則</td><td>AGENTS.md</td><td>每個 AI 工具都要遵守的原則與資料位置</td></tr><tr><td>Skill</td><td>skills/</td><td>可重複執行的任務流程、停止條件與驗收方式</td></tr><tr><td>糾正紀錄</td><td>feedback_*.md</td><td>錯誤做法、正確做法與原因</td></tr><tr><td>長期偏好</td><td>MEMORY.md</td><td>我確認過的偏好，以及糾正紀錄的索引</td></tr><tr><td>工作日誌</td><td>daily/</td><td>每天的工作、決定與待辦</td></tr></tbody></table></div><div class="counts"><div><b>53</b><span>個 Skill</span></div><div><b>54</b><span>份糾正紀錄</span></div><div><b>125</b><span>天工作日誌</span></div></div><figcaption class="sample-note">數字為 2026-11-13 的檔案數量，工作日誌期間 2026-06-29～11-13。這是檔案盤點，不代表使用頻率或每個工作階段都會載入全部內容。</figcaption></figure>
+<figure class="sample"><div class="sample-bar"><strong>規則內容</strong><span class="demo-tag">共用規則整理節錄</span></div><div class="raw"><div class="raw-label">AGENTS.md ／ 自我進化機制（整理節錄，省略標記與格式）</div><pre>我糾正你一個做法 → 先搜尋既有 feedback_*.md；
+同類根因更新既有檔案，否則建立新的 feedback。
+完整格式為「錯誤做法 → 正確做法 → 原因」。</pre></div><figcaption class="sample-note">各個 AI 工具的設定都指向這份共用規則。</figcaption></figure>
+<figure class="sample"><div class="sample-bar"><strong>糾正前後</strong><span class="demo-tag">依糾正紀錄改寫</span></div><div class="ba-pair"><div><b>原本</b>為了讓句子更具體，補上沒有確認過的使用者規模與時間。</div><div><b>現在</b>使用者、數量、頻率與期間只寫有來源的事實；查不到就不寫，或列為待我確認。</div></div><figcaption class="sample-note">改寫自 2026-11-10 的糾正紀錄；省略了與作品無關的私人內容。</figcaption></figure></div></div>
+<div class="split-note"><div><strong>我負責</strong>定義規則、糾正不合適的做法、決定哪些規則要升級，以及需要人工判斷的事。</div><div><strong>AI Agent 協助</strong>依規則找資料、使用 Skill、把我的糾正整理成紀錄，並在我授權的範圍內執行與回報。</div></div><p class="limit">目前界線：這是我個人的 AI 協作工作方法，不是對外提供的產品，也不是 RAG 系統。工作區本身是私人的，這裡只展示結構與經過整理的節錄。</p></article>
+<nav class="case-nav" aria-label="作品切換"><a href="skills.html"><small>← 上一個</small>工作方法：流程與驗收 Skill</a><a class="next" href="index.html"><small>回到首頁 →</small>看全部作品</a></nav>
+<footer><div>Ning · AI 協作作品集</div><div class="footer-right">最後更新：2026-11-13</div></footer>
+</main>
+<script src="theme.js"></script>
+</body></html>
