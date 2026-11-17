@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Ning 的工作方法：規劃、執行、提意見分給不同模型，小任務由執行模型處理、主模型驗收，另有 Advisor 提出建議。">
+<title>多模型分工｜Ning</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website"><meta property="og:title" content="多模型分工｜Ning"><meta property="og:description" content="Ning 的工作方法：規劃、執行、提意見分給不同模型，小任務由執行模型處理、主模型驗收，另有 Advisor 提出建議。">
+<link rel="stylesheet" href="style.css">
+<style>.role-table td:first-child{white-space:nowrap;color:var(--ink);font-weight:600}.role-table td:nth-child(2){white-space:nowrap}.role-table td{color:var(--muted)}.terms{margin:0;padding:0;list-style:none;display:grid;gap:12px}.terms li{color:var(--muted)}.terms b{display:block;color:var(--ink);font-size:14px}.case-grid>div{min-width:0}</style>
+</head>
+<body class="case-page">
+<a class="skip" href="#main">跳到主要內容</a>
+<header class="top"><nav class="nav wrap" aria-label="主要導覽"><a href="index.html" class="brand">Ning <span>AI 應用・流程改善</span></a><div class="links"><a href="index.html#works">作品</a><a href="index.html#method">工作方法</a><a href="index.html#approach" class="about-link">關於我</a><button class="theme" type="button" aria-label="切換深淺色模式" aria-pressed="false" hidden><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20.5 13A8.6 8.6 0 0 1 11 3.5 8.6 8.6 0 1 0 20.5 13Z"/></svg></button></div></nav></header>
+<main id="main" class="wrap">
+<a class="back" href="index.html#method">← 回到作品集</a>
+<article class="case" aria-labelledby="t"><div class="case-title"><div class="case-no" aria-hidden="true">03</div><div><p class="eyebrow">工作方法 03 ／ 多模型分工</p><h2 id="t">規劃、執行、提意見，分給不同的模型</h2><div class="uses"><span>Oh My Pi（OMP）</span><span>Claude Opus 5.5</span><span>GPT-6 Luna</span><span>GPT-6.1 Sol</span></div></div></div>
+<div class="case-grid"><div class="prose">
+<div class="story-block"><div class="body-label">遇到的問題</div><p>同一個模型自己做、自己檢查，容易覺得自己做對了。所有工作都交給最強的模型，成本又太高。</p></div><div class="story-block"><div class="body-label">做法</div><ul class="terms"><li><b>Loop Engineering</b>不再一句一句下指令，而是設計好「規劃 → 執行 → 驗收 → 修正」的流程，讓 AI 照著跑。</li><li><b>Maker／Checker</b>小任務交給執行模型處理，由主模型驗收。</li><li><b>Advisor</b>另一個模型讀主模型的回答，指出可能有問題的地方；採不採納由主模型決定。</li></ul></div><div class="story-block"><div class="body-label">一個實際例子</div><ol class="flowline"><li>Advisor 提醒<small>官方 /goal 的評估結果有三種，不是只有是／否</small></li><li>主模型查證<small>先讀官方文件，確認說法正確</small></li><li class="me">才更正<small>建議被採納，是因為查得到依據</small></li></ol></div><div class="story-block"><div class="body-label">還沒做到的事</div><p>每一輪都由我手動啟動，沒有排程自動執行的 loop。主模型自己的產出沒有強制獨立驗收，Advisor 只提供建議。</p></div>
+</div>
+<div><figure class="sample"><div class="sample-bar"><strong>角色分工</strong><span class="demo-tag">實際設定整理</span></div><div class="table-scroll"><table class="role-table"><thead><tr><th scope="col">角色</th><th scope="col">模型</th><th scope="col">負責</th></tr></thead><tbody><tr><td>主模型</td><td>Claude Opus 5.5</td><td>規劃、派出小任務、驗收結果</td></tr><tr><td>執行者</td><td>GPT-6 Luna</td><td>執行範圍明確的小任務</td></tr><tr><td>Advisor</td><td>GPT-6.1 Sol</td><td>讀主模型的回答並提出建議</td></tr></tbody></table></div><figcaption class="sample-note">模型依 OMP 的角色設定；刪除檔案、付款、push、發布這類操作，我在規則裡要求先取得我的同意。</figcaption></figure></div></div></article>
+<nav class="case-nav" aria-label="作品切換"><a href="workspace.html"><small>← 上一個</small>工作方法：AI 協作工作區</a></nav>
+<footer><div>Ning · AI 協作作品集</div><div class="footer-right">最後更新：2026-11-17</div></footer>
+</main>
+<script src="theme.js"></script>
+</body></html>
