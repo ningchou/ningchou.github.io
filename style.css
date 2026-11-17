@@ -14,3 +14,57 @@ figure.sample{margin:0}.shot{display:block;background:var(--tint);border-bottom:
 .projects.two{grid-template-columns:repeat(2,1fr)}.projects.one{grid-template-columns:1fr}.project.wide{flex-direction:row}.project.wide .project-visual{flex:0 0 40%;height:auto;min-height:165px;border-bottom:0;border-right:1px solid var(--line)}
 @media(max-width:680px){.projects.two{grid-template-columns:1fr}.project.wide{flex-direction:column}.project.wide .project-visual{flex:none;min-height:137px;border-right:0;border-bottom:1px solid var(--line)}}
 .inline-link{text-decoration:underline;text-underline-offset:4px}
+/* 2026-11-17 白話版：首屏代表作、能力卡、成果數字、前後對照、流程圖 */
+.hero{padding:64px 0;margin-bottom:64px}
+.value-line{font-size:18px;font-weight:600;color:var(--ink);margin-top:16px;letter-spacing:.02em}
+.proof-card{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:24px;display:block;transition:transform .3s cubic-bezier(.22,1,.36,1)}
+.proof-card:hover{transform:translateY(-4px)}
+.proof-card .shot-mini{border:1px solid var(--line);border-radius:4px;overflow:hidden;margin:12px 0 16px;aspect-ratio:16/8}
+.proof-card .shot-mini img{width:100%;height:100%;object-fit:cover;object-position:top left;display:block}
+.proof-card h3{font-size:18px}
+.proof-nums{display:grid;grid-template-columns:auto auto 1fr;gap:24px}
+.proof-nums b{display:block;font:600 30px/1.2 Georgia,"PMingLiU",serif;color:var(--accent);white-space:nowrap}
+.proof-nums span{font-size:12px;color:var(--muted);line-height:1.5;display:block}
+.proof-foot{display:flex;justify-content:space-between;margin-top:16px;font-size:12px;color:var(--muted)}
+.proof-foot b{color:var(--accent);font-weight:600}
+.can-do{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:0 0 96px;padding:0}
+.can-do li{list-style:none;border:1px solid var(--line);border-radius:6px;background:var(--paper);padding:24px;position:relative}
+.can-do li:not(:last-child):after{content:"→";position:absolute;right:-20px;top:24px;color:var(--accent);font-size:16px}
+.can-do .n{font:600 14px/1 Georgia,serif;color:var(--accent);display:block;margin-bottom:8px}
+.can-do h3{font-size:20px;margin-bottom:8px}
+.can-do p{font-size:14px;color:var(--muted)}
+.can-do .ex{margin-top:16px;padding-top:12px;border-top:1px solid var(--line);font-size:12px}
+.can-do .ex b{color:var(--ink);font-weight:600}
+.uses{display:flex;flex-wrap:wrap;gap:4px 8px;margin-top:12px;font-size:12px;color:var(--ink)}
+.uses span{border:1px solid var(--line);padding:0 8px;border-radius:4px}
+.project-body p{font-size:14px}
+.count-visual{display:flex;gap:32px}
+.count-visual b{display:block;font:600 36px/1.2 Georgia,serif;color:var(--accent)}
+.count-visual span{font-size:12px;color:var(--muted)}
+.outcome-band{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;background:var(--soft);border-radius:6px;padding:24px 32px;margin-bottom:48px}
+.outcome-band b{display:block;font:600 36px/1.2 Georgia,"PMingLiU",serif;color:var(--accent)}
+.outcome-band span{font-size:14px;color:var(--ink)}
+.outcome-band small{display:block;color:var(--muted)}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:4px}
+.ba div{border:1px solid var(--line);border-radius:6px;padding:16px;background:var(--paper)}
+.ba h4{font-size:14px;margin-bottom:8px}
+.ba ul{margin:0;padding:0;list-style:none;font-size:14px}
+.ba li{padding:8px 0 8px 24px;position:relative;color:var(--muted);line-height:1.6}
+.ba li+li{border-top:1px dashed var(--line)}
+.ba li:before{position:absolute;left:0;top:8px;font-weight:700}
+.ba .before li:before{content:"✕";color:#b4533a}
+.ba .after{border-color:var(--accent)}
+.ba .after h4{color:var(--accent)}
+.ba .after li:before{content:"✓";color:var(--accent)}
+.ba .after li{color:var(--ink)}
+.split-plain{display:grid;grid-template-columns:1fr 1fr;gap:16px;font-size:14px;color:var(--muted)}
+.split-plain strong{display:block;color:var(--ink);font-size:14px}
+@media(max-width:900px){.can-do{grid-template-columns:1fr;gap:32px}.can-do li:not(:last-child):after{content:"↓";right:24px;top:auto;bottom:-30px}}
+@media(max-width:680px){.proof-nums b,.outcome-band b{font-size:24px}.outcome-band{padding:16px;gap:12px}.outcome-band span{font-size:12px}.ba,.split-plain{grid-template-columns:1fr}.value-line{font-size:16px}}
+.flowline{display:flex;flex-wrap:wrap;align-items:stretch;gap:12px 28px;margin-top:4px;padding:0;list-style:none;font-size:14px}
+.flowline li{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:8px 12px;line-height:1.4}
+.flowline li small{display:block;color:var(--muted)}
+.flowline li.me{border-color:var(--accent);color:var(--accent);font-weight:600}
+.flowline li{position:relative}.flowline li+li:before{content:"→";position:absolute;left:-21px;top:50%;transform:translateY(-50%);color:var(--accent)}
+.outcome-band.text b{font-size:24px}
+.prose p.formula{font:600 18px/1.5 "Cascadia Mono",Consolas,monospace;color:var(--ink);background:var(--tint);border-radius:6px;padding:12px 16px;margin:12px 0}

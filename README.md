@@ -1,16 +1,16 @@
 # Ning｜AI 協作作品集
 
-Ning 的個人作品集網站：四個實際在用的工具，以及兩套和 AI 協作的工作方法。
+Ning 的個人作品集網站：四個自己做的工具，以及兩套和 AI 協作的工作方法。
 
 - 網址：https://ningchou.github.io/
-- 內容：AI 新聞收件匣、臨床資料工具、LotCompass、Local-Backtest；流程與驗收 Skill、AI 協作工作區。
+- 內容：臨床收案工具、AI 新聞收件匣、LotCompass、Local-Backtest；流程與驗收 Skill、AI 協作工作區。
 
 ## 結構
 
 | 檔案 | 用途 |
 | :--- | :--- |
-| `index.html` | 首頁：介紹、作品卡、關於我 |
-| `inbox.html`、`clinical.html`、`lotcompass.html`、`local-backtest.html`、`skills.html`、`workspace.html` | 六個作品頁 |
+| `index.html` | 首頁：標題、代表作、能力說明、作品卡、關於我 |
+| `clinical.html`、`inbox.html`、`lotcompass.html`、`local-backtest.html`、`skills.html`、`workspace.html` | 六個作品頁 |
 | `style.css`、`theme.js` | 共用樣式與深淺色切換 |
 | `assets/` | 臨床資料工具、Local-Backtest 截圖，LotCompass 報告圖與原始 HTML 報告（皆為合成資料；舊格式 Excel 為依原欄位重建的假資料） |
 
